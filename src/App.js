@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import styled, { css } from 'styled-components';
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
+import Home from './Home';
+
+const Container = styled.main`
+  width: 85%;
+  max-width: 1225px;
+  margin: 0 auto;
+  padding: 45px 0 75px;
+  background: #fff;
+`;
 
 class App extends Component {
   render() {
@@ -10,8 +20,9 @@ class App extends Component {
       <Router>
         <div className="App">
           <Header />
-          <main>
-          </main>
+          <Container>
+            <Route exact path="/" component={Home} />
+          </Container>
           <Footer />
         </div>
       </Router>
