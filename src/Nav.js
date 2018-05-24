@@ -37,4 +37,13 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default styled(Nav)`
+  ${props => props.header && css`
+    align-items: flex-end;
+    justify-content: center;
+    ul li {
+      font-size: 30px;
+      align-items: flex-end;
+    }
+  `}
+`;

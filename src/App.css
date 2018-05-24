@@ -66,9 +66,10 @@ ______________________ */
 
 /* --- Colors --- */
 :root {
-  --accent-color: #23DEC8;
+  --accent-color: #31d1ff;
   --text-color: #404041;
   --text-color--light: #fff;
+  --border-color: #ccc;
 }
 
 
