@@ -5,6 +5,7 @@ import './App.css';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
+import Map from './Map';
 
 const Container = styled.main`
   width: 85%;
@@ -22,6 +23,7 @@ class App extends Component {
           <Header />
           <Container>
             <Route exact path="/" component={Home} />
+            <Route exact path="/map" component={Map} />
           </Container>
           <Footer />
         </div>
