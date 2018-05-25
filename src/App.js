@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import styled, { css } from 'styled-components';
 import './App.css';
+import Blog from './Blog';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
@@ -23,7 +24,8 @@ class App extends Component {
           <Header />
           <Container>
             <Route exact path="/" component={Home} />
-            <Route exact path="/map" component={Map} />
+              <Route exact path="/map" component={Map} />
+              <Route exact path="/blog" component={Blog} />
           </Container>
           <Footer />
         </div>
