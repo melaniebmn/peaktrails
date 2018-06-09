@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 class Button extends Component {
   render() {
     return (
-      <a className={`${ this.props.className }`}>
+      <a href={this.props.url} target={this.props.target} className={`${ this.props.className }`}>
         {this.props.text}  
       </a>
     );
@@ -13,6 +13,7 @@ class Button extends Component {
 
 export default styled(Button)`
   display: block;
+  max-width: 300px;
   font-size: 20px;
   text-align: center;
   margin: 0 auto;
@@ -26,4 +27,12 @@ export default styled(Button)`
     background: transparent;
     color: var(--accent-color);
   }
+  ${props => props.secondary && css`
+    background: transparent;
+    color: var(--accent-color);
+    &:hover {
+      background: var(--accent-color);
+      color: var(--text-color--light);
+    }
+  `}
 `;

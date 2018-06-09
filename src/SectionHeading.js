@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 class SectionHeading extends Component {
   render() {
@@ -17,7 +17,7 @@ export default styled(SectionHeading)`
   font-size: 30px;
   letter-spacing: 2px;
   text-align: center;
-  margin: 2% auto 7%;
+  margin: 65px auto 7%;
   padding: 20px 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
