@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import styled from 'styled-components';
 import './App.css';
 import Blog from './Blog';
+import BlogPost from './BlogPost';
 import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
@@ -30,6 +31,7 @@ class App extends Component {
                 <Route exact path="/trails/:trailId" component={TrailsPost}/>
               <Route exact path="/map" component={Map} />
               <Route exact path="/blog" component={Blog} />
+                <Route exact path="/blog/:postId" component={BlogPost}/>
           </Container>
           <Footer />
         </div>
