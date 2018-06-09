@@ -35,4 +35,10 @@ export default styled(Button)`
       color: var(--text-color--light);
     }
   `}
+  ${props => props.blueWhite && css`
+    &:hover {
+      background: #fff;
+      color: var(--accent-color);
+    }
+  `}
 `;

@@ -1,49 +1,65 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import BlogPostTile from './BlogPostTile';
+import Button from './Button';
 import HomeTrailTile from './HomeTrailTile';
-import imgTrailJoffreLakes from './assets/img/joffrelakes.jpg';
-import imgTrailJugIsland from './assets/img/jugisland.jpg';
-import imgTrailStMarks from './assets/img/stmarks.jpg';
-import imgTrailWhytecliffPark from './assets/img/whytecliff.jpg';
+import bgInstagram from './assets/img/bg--cta.jpg';
+import posts from './blog.json';
+import trails from './trails.json';
+
+const SectionInstagram = styled.section`
+  background: fixed url(${bgInstagram});
+  background-size: cover;
+  margin: 13% 0;
+  padding: 13% 0;
+`;
+
+const SectionBlogPosts = styled.section`
+  a {
+    color: inherit;
+  }
+`;
 
 class Home extends Component {
   render() {
+    const featuredTrails = trails.slice(0, 4);
+    const blogPosts = posts.slice(0, 2);
+
     return (
-      <section>
-        <HomeTrailTile
-          img={imgTrailStMarks}
-          title="St. Mark's Summit"
-          blurb="St. Mark's Summit is part of the Howe Sound Crest Trail that spans over 30km from Cypress to a point along the Sea to Sky Highway near Porteau Cove."
-          difficulty="Medium"
-          duration="5"
-          length="11"
-        />
-        <HomeTrailTile
-          imgRight
-          img={imgTrailJugIsland}
-          title="Jug Island Beach"
-          blurb="Jug Island is a tiny gorgeous island located just off the northern tip of Belcarra Regional Park."
-          difficulty="Medium"
-          duration="2.5"
-          length="5.5"
-        />
-        <HomeTrailTile
-          img={imgTrailJoffreLakes}
-          title="Joffre Lakes"
-          blurb="Joffre Lakes is one of BC's most beautiful hikes and is relatively easy to access compared to other alpine lakes."
-          difficulty="Medium"
-          duration="5"
-          length="11"
-        />
-        <HomeTrailTile
-          imgRight
-          img={imgTrailWhytecliffPark}
-          title="Whytecliff Park"
-          blurb="Situated in the rugged coastline along the shores of Howe Sound in West Vancouver, the scenic mountains and passing boats..."
-          difficulty="Easy"
-          duration="1.5"
-          length="2"
-        />
-      </section>
+      <div>
+        <section>
+          {featuredTrails.map((trail, i) => (
+            <HomeTrailTile
+              key={i}
+              img={trail.img}
+              title={trail.name}
+              difficulty={trail.difficulty}
+              time={trail.time}
+              distance={trail.distance}
+              url={trail.id}
+            />
+          ))}
+        </section>
+        <SectionInstagram>
+          <Button
+            blueWhite
+            url="https://www.instagram.com/peaktrails/"
+            target="_blank"
+            text="Follow us on Instagram"
+          />
+        </SectionInstagram>
+        <SectionBlogPosts className="grid">
+          {blogPosts.map((post, i) => (
+            <Link key={i} to={`/blog/${post.id}`} className="grid__col-sm-6 grid__col-12">
+              <BlogPostTile
+                img={post.img}
+                title={post.title}
+              />
+            </Link>
+          ))}
+        </SectionBlogPosts>
+      </div>
     );
   }
 }
