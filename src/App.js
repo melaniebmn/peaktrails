@@ -12,11 +12,13 @@ import Trails from './Trails';
 import TrailsPost from './TrailsPost';
 
 const Container = styled.main`
-  width: 85%;
   max-width: 1225px;
   margin: 0 auto;
   padding: 85px 0 75px;
   background: #fff;
+  @media only screen and (min-width: 768px) {
+    width: 85%;
+  }
 `;
 
 class App extends Component {

@@ -11,13 +11,17 @@ const PostTitle = styled.h3`
   padding: 20px;
   background: #fff;
   transition: all .5s;
+  @media only screen and (max-width: 535px) {
+    font-size: 20px;
+    padding: 10px;
+  }
 `;
 
 class BlogPostTile extends Component {
   render() {
     return (
       <article className={`${ this.props.className }`}>
-        {<img src={require(`assets/img/${this.props.img}`)} alt="Post Preview" />}
+        <img src={require(`assets/img/${this.props.img}`)} alt="Post Preview" />
         <PostTitle>{this.props.title}</PostTitle>
       </article>
     );

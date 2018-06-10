@@ -4,15 +4,18 @@ import styled from 'styled-components';
 const TrailTitle = styled.h2`
   font-size: 28px;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 5px;
   background: var(--accent-color);
   color: var(--text-color--light);
 `;
 
 const ImgContainer = styled.figure`
   overflow: hidden;
+  display: flex;
+  align-items: center;
   img {
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
   }
   @media only screen and (min-width: 625px) {
     height: 204px;

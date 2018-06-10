@@ -17,7 +17,7 @@ export default styled(SectionHeading)`
   font-size: 30px;
   letter-spacing: 2px;
   text-align: center;
-  margin: 65px auto 7%;
+  margin: 65px auto 45px;
   padding: 20px 0;
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);

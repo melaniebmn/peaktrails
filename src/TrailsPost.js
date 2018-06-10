@@ -9,7 +9,7 @@ const ImgContainer = styled.figure`
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin: -15px auto 45px;
+  margin: 0 auto 45px;
   img {
     width: 100%;
   }
