@@ -5,12 +5,12 @@ import Button from './Button';
 const ImgContainer = styled.figure`
   overflow: hidden;
   align-items: center;
-  img {
-    min-width: 100%;
-    min-height: 100%;
-  }
   @media only screen and (min-width: 500px) {
     height: 400px;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+    }
   }
   @media only screen and (min-width: 1200px) {
     height: 450px;

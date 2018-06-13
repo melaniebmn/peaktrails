@@ -9,10 +9,13 @@ import posts from './blog.json';
 import trails from './trails.json';
 
 const SectionInstagram = styled.section`
-  background: fixed url(${bgInstagram});
+  background: url(${bgInstagram});
   background-size: cover;
-  margin: 13% 0;
-  padding: 13% 0;
+  margin: 15% 0;
+  padding: 15% 0;
+  @media only screen and (min-width: 768px) {
+    background-attachment: fixed;
+  }
 `;
 
 const SectionBlogPosts = styled.section`

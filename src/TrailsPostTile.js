@@ -13,12 +13,12 @@ const ImgContainer = styled.figure`
   overflow: hidden;
   display: flex;
   align-items: center;
-  img {
-    min-width: 100%;
-    min-height: 100%;
-  }
   @media only screen and (min-width: 625px) {
     height: 204px;
+    img {
+      min-width: 100%;
+      min-height: 100%;
+    }
   }
 `;
 
