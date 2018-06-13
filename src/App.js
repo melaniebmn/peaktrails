@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
+import createBrowserHistory from 'history/createBrowserHistory';
 import styled from 'styled-components';
 import './assets/css/App.css';
 import Blog from './Blog';
@@ -23,8 +24,20 @@ const Container = styled.main`
 
 class App extends Component {
   render() {
+    let history = createBrowserHistory();
+
+    history.listen(location => {
+      setTimeout(() => {
+        if (location.action === 'POP') {
+          return;
+        }
+
+        window.scrollTo(0, 0);
+      });
+    });
+
     return (
-      <Router>
+      <Router history={history}>
         <div className="App">
           <Header />
           <Container>
