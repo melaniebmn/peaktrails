@@ -10,6 +10,10 @@ const TrailsContainer = styled.div`
 `;
 
 class Trails extends Component {
+  componentDidMount() {
+    document.title = "Peaktrails | Trails";
+  }
+
   render() {
     return (
       <section className={`${ this.props.className }`}>

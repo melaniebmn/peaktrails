@@ -54,6 +54,10 @@ class Map extends Component {
     zoom: 11
   };
 
+  componentDidMount() {
+    document.title = "Peaktrails | Map";
+  }
+
   render() {
     return (
       // Important! Always set the container height explicitly

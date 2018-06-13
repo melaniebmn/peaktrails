@@ -6,6 +6,10 @@ import BlogPostTile from './BlogPostTile';
 import posts from './blog.json';
 
 class Blog extends Component {
+  componentDidMount() {
+    document.title = "Peaktrails | Blog";
+  }
+
   render() {
     return (
       <section className={`grid ${ this.props.className }`}>
